@@ -8,7 +8,7 @@ void recFib(unsigned long x, unsigned long y, int t)
   x = y;
   y = c;
   std::cout << c << std::endl;
-  if (t > 0) recFib(x, y, t - 1);
+  if (t > 1) recFib(x, y, t - 1);
 }
 
 void loopFib(int t)
@@ -31,7 +31,7 @@ void loopFib(int t)
 
 int main()
 {  
-  // recFib(0, 1, 10);
-  // loopFib(10);
+  recFib(0, 1, 10);
+  loopFib(10);
   return 0;
 }

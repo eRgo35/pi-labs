@@ -30,12 +30,84 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
         }
     }
     
-    public void tree(int a) {
-        for (int i = 0; i < 10; i++)
-        forward(50);
-        right(20);
-        if (a > 0) {
-            tree(a - 1);
+    public void tree(int l, int i, int a) {
+        if (l > i) {
+            left(a/2);
+            forward(l);
+            tree(3*l/4, i, a);
+            back(l);
+            right(a);
+            forward(l);
+            tree(3*l/4, i, a);
+            back(l);
+            left(a/2);
+
+        }
+    }
+    
+    public void za1(int l, int i) {
+        if (l > i) {
+            for (int j = 0; j < 4; j++) {
+                forward(l);
+                za1(l/2, i);
+                right(90);
+            }
+        }
+    }
+    
+    public void za2(int l, int i) {
+        if (l > i) {
+            for (int j = 0; j < 3; j++) {
+                forward(l);
+                za2(l/2, i);
+                right(120);
+            }
+        }
+    }
+    
+    public void za3(int l, int i) {
+        if (l > i) {
+            for (int j = 0; j < 4; j++) {
+                forward(l);
+                za3(l/2, i);
+                right(90);
+            }
+        }
+    }
+    
+    public void za8(int l, int i) {
+        if (l > i) {
+            for (int j = 0; j < 6; j++) {
+                forward(l/5);
+                za8(l/2, i);
+                forward(4*l/5);
+                right(60);
+            }
+        }
+    }
+    
+    public void za9(int l, int i, int c) {
+        if (c == 0) {
+            
+        }
+        c++;
+        if (l > i) {
+          forward(l);
+          right(90);
+          za9(l - 5, i, c);
+        }
+    }
+    
+    public void za12(int l, int i) {
+        if (l > i) {
+            for (int j = 0; j < 3; j++) {
+                forward(2*l/3);
+                right(60);
+                za2(l/3, i);
+                left(60);
+                forward(l/3);
+                right(120);
+            }
         }
     }
     

@@ -11,26 +11,34 @@ package labClasses;
  */
 public class RunFractalAlgos {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+  /**
+   * @param args the command line arguments
+   */
+  public static void main(String[] args) {
 
-        FractalAlgorithms alg = new FractalAlgorithms();
-//        alg.positioningTurtle(30); //uncomment to turn Turtle right
-//        alg.sierpinski(300, 50);   //uncomment to run Sierpinski triangle
+    FractalAlgorithms alg = new FractalAlgorithms();
+    // Examples
+    // alg.positioningTurtle(30); //uncomment to turn Turtle right
+    // alg.sierpinski(300, 50); //uncomment to run Sierpinski triangle
+    
+    // Lab Exercises
+    // alg.positioningTurtle(30); alg.algoA(300, 30); // uncomment to run algoA()
+    // alg.algoB(300, 10); // uncomment to run algoB()
+    // alg.algoC(300, 10, 120); // uncomment to run algoC()
+    
+    // Whiteboard Exerices
+    // alg.figure(300, 3, 0.4F, 4); // square from exercies but draw any figure
+    // alg.tree(100, 10, 64);
 
-//        alg.algoA(); // uncomment to run algoA()
-//        alg.algoB(); // uncomment to run algoB()        
-//        alg.algoC(); // uncomment to run algoC()       
-//        alg.figure(200, 3, 0.5F, 4); // square from exercies but draw any figure
-//          alg.tree(100, 10, 64);
-
-//          alg.za1(200, 20);
-//          alg.za2(200, 20);
-//          alg.za3(200, 10);
-//          alg.za8(300, 50);
-//            alg.za9(300, 50, 0);
-            alg.za12(300, 90);
-    }
+    // Practice makes the master
+    // alg.za1(200, 20);
+    // alg.positioningTurtle(30); alg.za2(200, 20);
+    // alg.positioningTurtle(60); alg.za3(200, 10);
+    // alg.za8(300, 50);
+    // alg.za9(300, 50, 0);
+    // alg.za12(300, 30);
+    // alg.zb5(500, 10);
+    // alg.positioningTurtle(-30); alg.zb7(300, 10);
+    // alg.zc5(500, 5);
+  }
 }

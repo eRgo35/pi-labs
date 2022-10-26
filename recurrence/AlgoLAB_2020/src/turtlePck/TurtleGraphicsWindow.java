@@ -164,7 +164,7 @@ public class TurtleGraphicsWindow extends Frame
    * @param steps Number of pixels (in this implementation) to take.
    * @see #fd
    */
-  public void forward( int steps ) { turtle.fd( steps ); }
+  public void forward( double steps ) { turtle.fd( steps ); }
 
 
   /**

@@ -95,7 +95,20 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
     if (l > i) {
       for (int j = 0; j < 4; j++) {
         forward(l);
-        za3(l / 2, i);
+        za3(l / 5, i);
+        right(90);
+      }
+    }
+  }
+
+  public void za6(int l, int i) {
+    if (l > i) {
+      for (int j = 0; j < 4; j++) {
+        forward(l / 4);
+        left(90);
+        za6(l / 2, i);
+        right(90);
+        forward(3 * l / 4);
         right(90);
       }
     }
@@ -104,23 +117,37 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
   public void za8(int l, int i) {
     if (l > i) {
       for (int j = 0; j < 6; j++) {
-        forward(l / 5);
+        forward(l / 4);
+        left(120);
         za8(l / 2, i);
-        forward(4 * l / 5);
+        right(120);
+        forward(3 * l / 4);
         right(60);
       }
     }
   }
 
-  public void za9(int l, int i, int c) {
-    if (c == 0) {
-
-    }
-    c++;
+  public void za9(double l, int i) {
     if (l > i) {
       forward(l);
       right(90);
-      za9(l - 5, i, c);
+      za9(l - 10, i);
+    }
+  }
+
+  public void za10(double l, int i) {
+    if (l > i) {
+      forward(l);
+      left(120);
+      za10(l - 10, i);
+    }
+  }
+
+  public void za11(double l, int i) {
+    if (l > i) {
+      forward(l);
+      left(60);
+      za11(l - 10, i);
     }
   }
 
@@ -157,7 +184,32 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
     for (int j = 0; j < 6; j++) {
       forward(l);
       right(60);
-      if (j % 2 == 0) zb7(l/2, i);
+      if (j % 2 == 0)
+        zb7(l / 2, i);
+    }
+  }
+
+  public void zc4(int l, int i, int a, int c) {
+    for (int j = 0; j < 2; j++) {
+      if (l > i) {
+        forward(l);
+        left(a / 2);
+        forward(l / 3);
+        zc4(3 * l / 4, i, a, c++);
+        back(l / 3);
+        right(a);
+        forward(l);
+        zc4(3 * l / 4, i, a, c++);
+        back(l);
+        left(a / 2);
+        back(l);
+      }
+      // if (c == 0) {
+      //   right(90);
+      //   forward(l);
+      //   left(90);
+      //   break;
+      // }
     }
   }
 
@@ -174,6 +226,39 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
       zc5(l / 3, i);
       left(90);
       forward(l / 3);
+      right(90);
+    }
+  }
+
+  public void zc6(int l, int i) {
+    if (l < i)
+      return;
+    for (int j = 0; j < 3; j++) {
+      forward(l);
+      zc6(l / 2, i);
+      back(l / 2);
+      zc6(l / 4, i);
+      back(l / 4);
+      zc6(l / 8, i);
+      back(l / 8);
+      zc6(l / 16, i);
+      back(l / 8);
+      right(120);
+    }
+  }
+
+  public void zc7(int l, int i) {
+    if (l < i)
+      return;
+    for (int j = 0; j < 4; j++) {
+      forward(l / 4);
+      zc7(l / 6, i);
+      forward(l / 4);
+      zc7(l / 6, i);
+      forward(l / 4);
+      zc7(l / 3, i);
+      forward(l / 4);
+      back(l);
       right(90);
     }
   }

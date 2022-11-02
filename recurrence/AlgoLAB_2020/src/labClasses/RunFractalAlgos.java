@@ -22,9 +22,9 @@ public class RunFractalAlgos {
     // alg.sierpinski(300, 50); //uncomment to run Sierpinski triangle
 
     // Lab Exercises
-    // alg.positioningTurtle(30); alg.algoA(300, 30); // uncomment to run algoA()
+    alg.positioningTurtle(30); alg.algoA(300, 30); // uncomment to run algoA()
     // alg.algoB(300, 10); // uncomment to run algoB()
-    // alg.algoC(300, 10, 120); // uncomment to run algoC()
+    // alg.algoC(200, 5, 120); // uncomment to run algoC()
 
     // Whiteboard Exerices
     // alg.figure(300, 3, 0.4F, 4); // square from exercies but draw any figure
@@ -42,7 +42,7 @@ public class RunFractalAlgos {
     // alg.za12(300, 30);
     // alg.zb5(500, 10);
     // alg.positioningTurtle(-30); alg.zb7(300, 10);
-    alg.zc4(100, 50, 100, 0);
+    // alg.zc4(100, 50, 100, 0);
     // alg.zc5(500, 5);
     // alg.positioningTurtle(30); alg.zc6(300, 10);
     // alg.zc7(300, 10);

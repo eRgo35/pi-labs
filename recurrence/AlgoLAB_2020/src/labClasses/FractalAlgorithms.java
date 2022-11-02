@@ -2,21 +2,16 @@ package labClasses;
 
 import turtlePck.TurtleGraphicsWindow;
 
-/**
- *
- * @author Rau7LabToCS
- */
 public class FractalAlgorithms extends TurtleGraphicsWindow {
 
   public void algoA(double l, double i) {
     if (l < i)
       return;
     for (int j = 0; j < 3; j++) {
-      forward(l / 2.0);
-      left(180);
-      algoA(l / 2.0, i);
-      right(180);
-      forward(l / 2.0);
+      left(60);
+      algoA(l / 2, i);
+      right(60);
+      forward(l);
       right(120);
     }
   }
@@ -39,11 +34,24 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
       return;
     forward(l);
     left(a / 2);
-    algoC(2 * l / 3, i, a);
+    algoC(5 * l / 8, i, a);
     right(a);
-    algoC(2 * l / 3, i, a);
+    algoC(5 * l / 8, i, a);
     left(a / 2);
     back(l);
+  }
+
+  public void algoAalt(double l, double i) {
+    if (l < i)
+      return;
+    for (int j = 0; j < 3; j++) {
+      forward(l / 2.0);
+      left(180);
+      algoA(l / 2.0, i);
+      right(180);
+      forward(l / 2.0);
+      right(120);
+    }
   }
 
   public void figure(int length, int amount, double divider, int sides) {
@@ -205,10 +213,10 @@ public class FractalAlgorithms extends TurtleGraphicsWindow {
         back(l);
       }
       // if (c == 0) {
-      //   right(90);
-      //   forward(l);
-      //   left(90);
-      //   break;
+      // right(90);
+      // forward(l);
+      // left(90);
+      // break;
       // }
     }
   }

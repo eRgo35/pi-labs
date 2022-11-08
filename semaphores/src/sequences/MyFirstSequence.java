@@ -11,6 +11,10 @@ import java.util.concurrent.Semaphore;
  *
  * @author Rau7
  */
+
+// BCBA
+// ABCCA
+// 16 + 46
 public class MyFirstSequence {
 
     private static final int SLEEP = 1;
@@ -19,7 +23,9 @@ public class MyFirstSequence {
 
     //declare all necessary semaphores 
 //    private static final Semaphore SEM_A = new Semaphore(0, true);
-
+    private static final Semaphore A = new Semaphore(0);
+    private static final Semaphore B = new Semaphore(2);
+    private static final Semaphore C = new Semaphore(0);
 
 
     public static void main(String[] args) {
@@ -39,9 +45,12 @@ public class MyFirstSequence {
                     Thread.sleep(SLEEP);
                     //use semaphore
 
+                    A.acquire();
+
                     System.out.print("A ");
                     //use semaphore
-
+                    
+                    A.release();
                 }
             } catch (InterruptedException ex) {
                 System.out.println("Thread PrintA: Ooops..." + ex);
@@ -59,10 +68,16 @@ public class MyFirstSequence {
                 for (int i = 0; i < COUNT; i++) {
                     Thread.sleep(SLEEP);
                     //use semaphore
-
+                    
+                    C.release();
+                    B.acquire();
+                    
                     System.out.print("B ");
-                    //use semaphore
+                    B.release();
 
+                    C.release();
+                    A.release();
+                    //use semaphore
                 }
             } catch (InterruptedException ex) {
                 System.out.println("Thread PrintB: Ooops..." + ex);
@@ -81,11 +96,13 @@ public class MyFirstSequence {
                     Thread.sleep(SLEEP);
                     //use semaphore
 
+                    C.acquire();
+
                     System.out.print("C ");
                      //use semaphore
                      
-                     
-                     
+                    B.release();
+                    C.release();
                 }
             } catch (InterruptedException ex) {
                 System.out.println("Thread PrintC: Ooops..." + ex);

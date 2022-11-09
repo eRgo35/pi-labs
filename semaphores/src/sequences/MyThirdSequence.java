@@ -11,7 +11,8 @@ import java.util.concurrent.Semaphore;
  *
  * @author Rau7
  */
-public class MyThirdSequence {
+
+ public class MyThirdSequence {
 
     private static final int SLEEP = 1;
     private static final int COUNT = 10;

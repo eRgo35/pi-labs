@@ -22,6 +22,8 @@ public class FirstValue {
     //declare all necessary semaphores 
 //    private static final Semaphore NONAME = new Semaphore(1, true);
 
+//! 16 + 46
+
     public static void main(String[] args) {
         new P2().start();
         new P1().start();

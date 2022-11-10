@@ -37,7 +37,7 @@ public class MySecondSequence {
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
       try {
-        for (;;) {
+        for (int i = 0; i < COUNT * 2; i++) { // ? Same question here
           A.acquire();
           Thread.sleep(SLEEP);
           System.out.print("A ");
@@ -56,7 +56,7 @@ public class MySecondSequence {
     @SuppressWarnings("SleepWhileIgnLoop")
     public void run() {
       try {
-        for (;;) {
+        for (int i = 0; i < COUNT; i++) {
           A.release();
           B.acquire();
           Thread.sleep(SLEEP);
@@ -80,7 +80,7 @@ public class MySecondSequence {
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
       try {
-        for (;;) {
+        for (int i = 0; i < COUNT * 2; i++) { // ? And here
           C.acquire();
           Thread.sleep(SLEEP);
           System.out.print("C ");

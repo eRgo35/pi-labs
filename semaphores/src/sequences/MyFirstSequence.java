@@ -56,7 +56,8 @@ public class MyFirstSequence {
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
       try {
-        for (int i = 0; i < COUNT*2; i++) {
+        for (int i = 0; i < COUNT * 2; i++) { // ? This count incrementation is required? or the program shall ignore
+                                              // ? the pattern after count?
           B.acquire();
           Thread.sleep(SLEEP);
           System.out.print("B ");

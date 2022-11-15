@@ -21,11 +21,9 @@ public class SecondValue {
 
   // declare all necessary semaphores
   // private static final Semaphore NONAME = new Semaphore(1, true);
-  private static final Semaphore S2 = new Semaphore(0);
-  private static final Semaphore R2 = new Semaphore(0);
   private static final Semaphore S1 = new Semaphore(0);
   private static final Semaphore R1 = new Semaphore(0);
-  private static final Semaphore S3 = new Semaphore(0);
+  private static final Semaphore S2 = new Semaphore(0);
 
   //! 46
   public static void main(String[] args) {
@@ -41,11 +39,10 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        A = 10;
-        S2.acquire();
-        B = B + 5;
-        R2.release();
-        S3.acquire();
+        A = 10; // po prostu ustawiamy 10
+        S1.release();
+        B = B + 5; // nie ma wpływu czy dodamy 5 do 0 czy do 3
+        S2.acquire(); // whatever
         C = C + A;
 
         Thread.sleep(SLEEP);
@@ -65,8 +62,8 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        B = B + C;
-        S3.acquire();
+        B = B + C; // nie ma znaczenia do czego to 3 dodamy
+        S2.acquire(); // whatever
         A = A + B;
 
         Thread.sleep(SLEEP);
@@ -87,13 +84,11 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        S2.acquire();
+        S1.acquire(); // czekamy aż ustawianie A się zakończy
         A = 2 * A;
-        R2.release();
-        S1.acquire();
         C = B + 10;
         R1.release();
-        S3.acquire();
+        S2.acquire();
         B = B + A;
 
         Thread.sleep(SLEEP);
@@ -113,12 +108,9 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        S2.release(2);
-        R2.acquire(2);
-        S1.release();
         R1.acquire();
         System.out.println("Sum result: " + A + " + " + B + " + " + C + " = " + (A + B + C));
-        S3.release(3);
+        S2.release(3);
         Thread.sleep(SLEEP);
         System.out.println("Thread P4 is done...");
 

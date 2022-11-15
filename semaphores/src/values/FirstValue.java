@@ -22,6 +22,7 @@ public class FirstValue {
   // declare all necessary semaphores
   // private static final Semaphore NONAME = new Semaphore(1, true);
   private static final Semaphore S = new Semaphore(0);
+  private static final Semaphore R = new Semaphore(0);
 
   // ! 16
 
@@ -39,6 +40,7 @@ public class FirstValue {
       try {
         Thread.sleep(SLEEP);
         A = 10;
+        R.release();
         S.acquire();
         B = B + 5;
 
@@ -62,6 +64,7 @@ public class FirstValue {
       try {
         Thread.sleep(SLEEP);
         B = B + C;
+        R.release();
         S.acquire();
         A = A + B;
 
@@ -106,6 +109,7 @@ public class FirstValue {
     @Override
     public void run() {
       try {
+        R.acquire(2);
         Thread.sleep(SLEEP);
         System.out.println("Sum result: " + A + " + " + B + " + " + C + " = " + (A + B + C));
         

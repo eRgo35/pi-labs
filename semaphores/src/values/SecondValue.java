@@ -21,7 +21,11 @@ public class SecondValue {
 
   // declare all necessary semaphores
   // private static final Semaphore NONAME = new Semaphore(1, true);
-  private static final Semaphore S = new Semaphore(0);
+  private static final Semaphore S2 = new Semaphore(0);
+  private static final Semaphore R2 = new Semaphore(0);
+  private static final Semaphore S21 = new Semaphore(0);
+  private static final Semaphore R21 = new Semaphore(0);
+  private static final Semaphore S3 = new Semaphore(0);
 
   //! 46
   public static void main(String[] args) {
@@ -37,11 +41,11 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-
         A = 10;
+        S2.acquire();
         B = B + 5;
-        S.acquire();
-
+        R2.release();
+        S3.acquire();
         C = C + A;
 
         Thread.sleep(SLEEP);
@@ -61,9 +65,8 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-
         B = B + C;
-        S.acquire();
+        S3.acquire();
         A = A + B;
 
         Thread.sleep(SLEEP);
@@ -84,11 +87,13 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-
-        C = B + 10;
+        S2.acquire();
         A = 2 * A;
-        S.acquire();
-
+        R2.release();
+        S21.acquire();
+        C = B + 10;
+        R21.release();
+        S3.acquire();
         B = B + A;
 
         Thread.sleep(SLEEP);
@@ -108,9 +113,12 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-
+        S2.release(2);
+        R2.acquire(2);
+        S21.release();
+        R21.acquire();
         System.out.println("Sum result: " + A + " + " + B + " + " + C + " = " + (A + B + C));
-        S.release(3);
+        S3.release(3);
         Thread.sleep(SLEEP);
         System.out.println("Thread P4 is done...");
 

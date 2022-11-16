@@ -31,7 +31,7 @@ public class MyFirstSequence {
 
   }
 
-  private static final class PrintA extends Thread { // thread definition
+  private static final class PrintA extends Thread {
 
     @Override
     @SuppressWarnings("SleepWhileInLoop")
@@ -56,8 +56,7 @@ public class MyFirstSequence {
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
       try {
-        for (int i = 0; i < COUNT * 2; i++) { // ? This count incrementation is required? or the program shall ignore
-                                              // ? the pattern after count?
+        for (int i = 0; i < COUNT * 2; i++) {
           B.acquire();
           Thread.sleep(SLEEP);
           System.out.print("B ");
@@ -70,7 +69,7 @@ public class MyFirstSequence {
     }
   }
 
-  private static final class PrintC extends Thread { // thread definition
+  private static final class PrintC extends Thread {
 
     @Override
     @SuppressWarnings("SleepWhileInLoop")

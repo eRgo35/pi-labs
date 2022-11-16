@@ -37,7 +37,7 @@ public class MySecondSequence {
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
       try {
-        for (int i = 0; i < COUNT * 2; i++) { // ? Same question here
+        for (int i = 0; i < COUNT * 2; i++) {
           A.acquire();
           Thread.sleep(SLEEP);
           System.out.print("A ");
@@ -74,13 +74,13 @@ public class MySecondSequence {
     }
   }
 
-  private static final class PrintC extends Thread { // thread definition
+  private static final class PrintC extends Thread {
 
     @Override
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
       try {
-        for (int i = 0; i < COUNT * 2; i++) { // ? And here
+        for (int i = 0; i < COUNT * 2; i++) {
           C.acquire();
           Thread.sleep(SLEEP);
           System.out.print("C ");

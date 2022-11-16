@@ -39,10 +39,10 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        A = 10; // po prostu ustawiamy 10
+        A = 10;
         S1.release();
-        B = B + 5; // nie ma wpływu czy dodamy 5 do 0 czy do 3
-        S2.acquire(); // whatever
+        B = B + 5;
+        S2.acquire();
         C = C + A;
 
         Thread.sleep(SLEEP);
@@ -62,8 +62,8 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        B = B + C; // nie ma znaczenia do czego to 3 dodamy
-        S2.acquire(); // whatever
+        B = B + C;
+        S2.acquire();
         A = A + B;
 
         Thread.sleep(SLEEP);
@@ -84,7 +84,7 @@ public class SecondValue {
     public void run() {
       try {
         Thread.sleep(SLEEP);
-        S1.acquire(); // czekamy aż ustawianie A się zakończy
+        S1.acquire();
         A = 2 * A;
         C = B + 10;
         R1.release();

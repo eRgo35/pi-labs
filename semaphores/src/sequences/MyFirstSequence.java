@@ -21,8 +21,8 @@ public class MyFirstSequence {
   // declare all necessary semaphores
   // private static final Semaphore SEM_A = new Semaphore(0, true);
   private static final Semaphore A = new Semaphore(0);
-  private static final Semaphore B = new Semaphore(0);
-  private static final Semaphore C = new Semaphore(0);
+  private static final Semaphore B = new Semaphore(1);
+  private static final Semaphore C = new Semaphore(1);
 
   public static void main(String[] args) {
     new PrintA().start();
@@ -38,10 +38,10 @@ public class MyFirstSequence {
     public void run() {
       try {
         for (int i = 0; i < COUNT; i++) {
+          A.acquire(2);
           Thread.sleep(SLEEP);
-          A.acquire();
           System.out.print("A ");
-          C.release();
+          B.release();
         }
       } catch (InterruptedException ex) {
         System.out.println("Thread PrintA: Ooops..." + ex);
@@ -60,6 +60,7 @@ public class MyFirstSequence {
           B.acquire();
           Thread.sleep(SLEEP);
           System.out.print("B ");
+          A.release();
           C.release();
         }
       } catch (InterruptedException ex) {
@@ -76,14 +77,10 @@ public class MyFirstSequence {
     public void run() {
       try {
         for (int i = 0; i < COUNT; i++) {
+          C.acquire(2);
           Thread.sleep(SLEEP);
-          B.release();
-          C.acquire();
           System.out.print("C ");
           B.release();
-          C.acquire();
-          A.release();
-          C.acquire();
         }
       } catch (InterruptedException ex) {
         System.out.println("Thread PrintC: Ooops..." + ex);

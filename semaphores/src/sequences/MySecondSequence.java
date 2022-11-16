@@ -31,7 +31,7 @@ public class MySecondSequence {
 
   }
 
-  private static final class PrintA extends Thread { // thread definition
+  private static final class PrintA extends Thread {
 
     @Override
     @SuppressWarnings("SleepWhileInLoop")

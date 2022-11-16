@@ -24,6 +24,7 @@ public class SecondValue {
   private static final Semaphore S1 = new Semaphore(0);
   private static final Semaphore R1 = new Semaphore(0);
   private static final Semaphore S2 = new Semaphore(0);
+  private static final Semaphore S4 = new Semaphore(0);
 
   //! 46
   public static void main(String[] args) {
@@ -42,6 +43,7 @@ public class SecondValue {
         A = 10;
         S1.release();
         B = B + 5;
+        S4.release();
         S2.acquire();
         C = C + A;
 
@@ -63,6 +65,7 @@ public class SecondValue {
       try {
         Thread.sleep(SLEEP);
         B = B + C;
+        S4.release();
         S2.acquire();
         A = A + B;
 
@@ -86,6 +89,7 @@ public class SecondValue {
         Thread.sleep(SLEEP);
         S1.acquire();
         A = 2 * A;
+        S4.acquire(2);
         C = B + 10;
         R1.release();
         S2.acquire();

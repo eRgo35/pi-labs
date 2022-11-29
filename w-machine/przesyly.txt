@@ -1,0 +1,12 @@
+- (AK) -> (Ad)
+
+wyak wes weja ode weak; // move data from the register to active word and clear the register by substracting itself
+wys weja ode weak; // send the value to the alu and substract from 0 to achieve a negative value in the register
+weak wei; // send the result from the register to the address part of the instruction (AD)
+
+(AK) + ((L)) -> (L) + 1
+
+wyl wea il; // send (L) to (A) and increment (L)
+czyt wys weja dod weak; // read value from the memory address of A and add it to the register (AK);
+wyl wea wyak wes; // move (L) to (A) and move (AK) to (S)
+pisz; // save the sum of (AK) + ((L)) -> the address of L incremented

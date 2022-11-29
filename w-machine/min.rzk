@@ -1,0 +1,7 @@
+ROZKAZ MIN; // tworzy rozkaz MIN min( (AK), ((AD)) ) -> AK
+czyt wys wei il; // czytamy wartość z pamięci, przenosimy do układu sterującego i inkrementujemy licznik rozkazów
+wyad wea; // przenosimy adres rozkazu do pamięci adresowej 
+czyt wys weja ode weak;  // odczytujemy wartość schowaną pod adresem i przenosimy do ALU, następnie odejmujemy od (AK) i pozostawiamy to tam
+JEZELI z TO @true GDY NIE @false; // jeżeli znak w AK < 0
+@true wys weja dod weak wyl wea KONIEC; // przywróc mniejszą wartość aka dodaj do różnicy; wyl wea - uruchamia następny rozkaz
+@false wys weja przep weak wyl wea; // przepis mniejszą wartość; wyl wea - uruchamia następny rozkaz

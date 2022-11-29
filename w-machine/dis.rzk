@@ -1,0 +1,3 @@
+ROZKAZ DIS; // tworzy rozkaz DIS (AK) - 1 -> Ak, if (AK) < 0 then (Ad) -> L else (L) + 1 -> L
+czyt wys wei il; // standardowa procedura
+

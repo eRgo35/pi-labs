@@ -1,7 +1,6 @@
 // if x > y
 POB x
 MIN y
-
 LAD z1
 
 // if x < y

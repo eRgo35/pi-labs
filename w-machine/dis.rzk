@@ -1,7 +1,7 @@
-ROZKAZ DIS; // tworzy rozkaz DIS (AK) - 1 -> Ak, if (AK) < 0 then (Ad) -> L else (L) + 1 -> L
-czyt wys wei il; // standardowa procedura
-wyl as wes weja dod weak il; // dodajemy aktualną wartość licznika rozkazów do AK, następnie inkrementujemy licznik oraz zapisujemy aktualny numer rozkazu jako temp
-wyl as weja ode weak; // odejmujemy aktulaną wartość licznika rozkazów od (AK), różnica n-(n+1) = 1
-JEZELI z TO @neg GDY NIE @pos; // if sign bit is smaller than 0
-@neg wyad wel wea KONIEC; // przenieś adres rozkazu na magistralę adresową (aka L & A)
-@pos wys as wel wea; // przenieś zapisaną wartość z S na magistralę adresową (aka L & A)
+ROZKAZ DIS;
+czyt wys wei il;
+wyl as wes weja dod weak il;
+wyl as weja ode weak;
+JEZELI z TO @neg GDY NIE @pos;
+@neg wyad wel wea KONIEC;
+@pos wys as wel wea;

@@ -1,0 +1,142 @@
+[Opcje]
+Po³¹czenie=1
+Inkrementacja=1
+Logiczne=1
+Arytmetyczne=1
+Stos=1
+RejestrX=1
+RejestrY=1
+Przerwania=0
+Wejœcie=1
+Znaczniki=0
+Adres=11
+Kod=5
+[Rozkazy]
+Liczba=15
+Nazwa1=end
+Nazwa2=add
+Nazwa3=sub
+Nazwa4=imul
+Nazwa5=ldr
+Nazwa6=str
+Nazwa7=jmp
+Nazwa8=js
+Nazwa9=jz
+Nazwa10=call
+Nazwa11=ret
+Nazwa12=push
+Nazwa13=pop
+Nazwa14=scanf
+Nazwa15=printf
+[end]
+Linie=5
+Linia1=// END the program
+Linia2=ROZKAZ END;
+Linia3=Argumenty 0;
+Linia4=czyt wys wei il;
+Linia5=stop;
+[add]
+Linie=5
+Linia1=// (Ak)+((Ad))->Ak
+Linia2=ROZKAZ ADD;
+Linia3=czyt wys wei il;
+Linia4=wyad wea;
+Linia5=czyt wys weja dod weak wyl wea;
+[sub]
+Linie=5
+Linia1=// (Ak)-((Ad))->Ak
+Linia2=ROZKAZ SUB;
+Linia3=czyt wys wei il;
+Linia4=wyad wea;
+Linia5=czyt wys weja ode weak wyl wea;
+[imul]
+Linie=5
+Linia1=ROZKAZ IMUL;
+Linia2=// (Ak)*((Ad))->Ak
+Linia3=czyt wys wei il;
+Linia4=wyad wea;
+Linia5=czyt wys weja mno weak wyl wea;
+[ldr]
+Linie=5
+Linia1=// ((Ad))->Ak
+Linia2=ROZKAZ LDR;
+Linia3=czyt wys wei il;
+Linia4=wyad wea;
+Linia5=czyt wys weja przep weak wyl wea;
+[str]
+Linie=5
+Linia1=// (Ak)->(Ad)
+Linia2=ROZKAZ STR;
+Linia3=czyt wys wei il;
+Linia4=wyad wea wyak wes;
+Linia5=pisz wyl wea;
+[jmp]
+Linie=5
+Linia1=// jump to label or specified location
+Linia2=ROZKAZ JMP;
+Linia3=Argumenty 1;
+Linia4=czyt wys wei il;
+Linia5=wyad wea wel;
+[js]
+Linie=6
+Linia1=// jump if (AK) < 0
+Linia2=ROZKAZ JS;
+Linia3=czyt wys wei il;
+Linia4=JEZELI Z TO @ujemne GDY NIE @dodatnie;
+Linia5=@ujemne wyad wea wel KONIEC;
+Linia6=@dodatnie wyl wea;
+[jz]
+Linie=6
+Linia1=// jump if (AK) = 0
+Linia2=ROZKAZ JZ;
+Linia3=czyt wys wei il;
+Linia4=JEZELI zak TO @zero GDY NIE @niezero;
+Linia5=@zero wyad wea wel KONIEC;
+Linia6=@niezero wyl wea;
+[call]
+Linie=6
+Linia1=rozkaz call;
+Linia2=argumenty 1;
+Linia3=czyt wys wei il;
+Linia4=dws;
+Linia5=wyws wea wyls wes;
+Linia6=pisz wyad wel wea;
+[ret]
+Linie=5
+Linia1=rozkaz ret;
+Linia2=argumenty 0;
+Linia3=czyt wys wei il;
+Linia4=wyws wea iws;
+Linia5=czyt wys as wea wel;
+[push]
+Linie=6
+Linia1=rozkaz push;
+Linia2=argumenty 0;
+Linia3=czyt wys wei il;
+Linia4=dws;
+Linia5=wyws wea wyak wes;
+Linia6=pisz wyl wea;
+[pop]
+Linie=5
+Linia1=rozkaz pop;
+Linia2=argumenty 0;
+Linia3=czyt wys wei il;
+Linia4=wyws wea iws;
+Linia5=czyt wys weja przep weak wyl wea;
+[scanf]
+Linie=6
+Linia1=// input a char from user
+Linia2=ROZKAZ SCANF;
+Linia3=czyt wys wei il;
+Linia4=wyak weja ode weak start;
+Linia5=@czekaj wyg weja ode weak JEzELI Z TO @gotowe GDY NIE @czekaj;
+Linia6=@gotowe wyrb weja przep weak wyl wea;
+[printf]
+Linie=7
+Linia1=// output a char to user
+Linia2=ROZKAZ PRINTF;
+Linia3=czyt wys wei il;
+Linia4=wyak weja werb start;
+Linia5=wyak wes weja ode weak;
+Linia6=@czeka wyg weja ode weak jezeli z to @gotowe gdy nie @czeka;
+Linia7=@gotowe wys weja przep weak wyl wea;

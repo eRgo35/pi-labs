@@ -2,13 +2,16 @@ ROZKAZ LEN;
 
 czyt wys wei il; 
 wyad wea;
+// zerowanie rejestru X
 // wyl as weja przep weak;
 // wyl as weja ode weak;
 // wyak wex;
 czyt wys weja przep weak;
+// sprawdzamy czy nie ma konca linii
 JEZELI zak TO @zero GDY NIE @niezero;
 @zero wyx wes;
 pisz wyl wea KONIEC;
+// tworzymy 1
 @niezero wyl as wes il;
 wyl as weja przep weak;
 wys weja ode weak sa wel;
@@ -25,5 +28,5 @@ wyl as wes il;
 wyl as weja przep weak;
 wys weja ode weak sa wel;
 wyy weja dod weak;
-wyak wes wyad wea;
+wyak wes wyad wel wea;
 pisz;

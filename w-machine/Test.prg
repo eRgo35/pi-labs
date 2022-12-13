@@ -8,11 +8,7 @@ ldx nul
 ldy nul 
 
 _start:
-loop:
-   ldr arr
-   printf 2
-   add arr one
-   jmp loop
+leaq ax x
 end
 
 _data:

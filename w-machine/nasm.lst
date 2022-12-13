@@ -9,10 +9,10 @@ RejestrY=1
 Przerwania=1
 Wejœcie=1
 Znaczniki=1
-Adres=25
-Kod=7
+Adres=18
+Kod=6
 [Rozkazy]
-Liczba=65
+Liczba=58
 Nazwa1=end
 Nazwa2=mov
 Nazwa3=inc
@@ -23,71 +23,54 @@ Nazwa7=leaq
 Nazwa8=add
 Nazwa9=sub
 Nazwa10=imul
-Nazwa11=xor
-Nazwa12=or
-Nazwa13=and
-Nazwa14=sal
-Nazwa15=shl
-Nazwa16=sar
-Nazwa17=shr
-Nazwa18=cmp
-Nazwa19=test
-Nazwa20=sete
-Nazwa21=setz
-Nazwa22=sets
-Nazwa23=setns
-Nazwa24=setg
-Nazwa25=setnle
+Nazwa11=idiv
+Nazwa12=xor
+Nazwa13=or
+Nazwa14=and
+Nazwa15=sal
+Nazwa16=shl
+Nazwa17=sar
+Nazwa18=shr
+Nazwa19=cmp
+Nazwa20=test
+Nazwa21=sete
+Nazwa22=setne
+Nazwa23=sets
+Nazwa24=setns
+Nazwa25=setg
 Nazwa26=setge
-Nazwa27=setnl
-Nazwa28=setl
-Nazwa29=setnge
-Nazwa30=setle
-Nazwa31=setng
-Nazwa32=seta
-Nazwa33=setnbe
-Nazwa34=setae
-Nazwa35=setnb
-Nazwa36=setb
-Nazwa37=setnae
-Nazwa38=setbe
-Nazwa39=setna
-Nazwa40=jmp
-Nazwa41=je
-Nazwa42=jz
-Nazwa43=jne
-Nazwa44=jnz
-Nazwa45=js
-Nazwa46=jns
-Nazwa47=jg
-Nazwa48=jnle
-Nazwa49=jge
-Nazwa50=jnl
-Nazwa51=jl
-Nazwa52=jnge
-Nazwa53=jle
-Nazwa54=jng
-Nazwa55=ja
-Nazwa56=jnbe
-Nazwa57=jae
-Nazwa58=jnb
-Nazwa59=jb
-Nazwa60=jnae
-Nazwa61=jbe
-Nazwa62=jna
-Nazwa63=ldr
-Nazwa64=str
-Nazwa65=ldx
-Nazwa66=stx
-Nazwa67=ldy
-Nazwa68=sty
-Nazwa69=call
-Nazwa70=leave
-Nazwa71=ret
-Nazwa72=push
-Nazwa73=pop
-Nazwa74=scanf
-Nazwa75=printf
+Nazwa27=setl
+Nazwa28=setle
+Nazwa29=seta
+Nazwa30=setae
+Nazwa31=setb
+Nazwa32=setbe
+Nazwa33=jmp
+Nazwa34=je
+Nazwa35=jne
+Nazwa36=js
+Nazwa37=jns
+Nazwa38=jg
+Nazwa39=jge
+Nazwa40=jl
+Nazwa41=jle
+Nazwa42=ja
+Nazwa43=jae
+Nazwa44=jb
+Nazwa45=jbe
+Nazwa46=ldr
+Nazwa47=str
+Nazwa48=ldx
+Nazwa49=stx
+Nazwa50=ldy
+Nazwa51=sty
+Nazwa52=call
+Nazwa53=leave
+Nazwa54=ret
+Nazwa55=push
+Nazwa56=pop
+Nazwa57=scanf
+Nazwa58=printf
 [end]
 Linie=4
 Linia1=ROZKAZ end;
@@ -120,7 +103,7 @@ Linia4=czyt wys weja przep weak dak;
 Linia5=wyak wes;
 Linia6=pisz wyl wea;
 [neg]
-Linie=3
+Linie=6
 Linia1=ROZKAZ neg;
 Linia2=czyt wys wei il;
 Linia3=wyad wea;
@@ -128,10 +111,13 @@ Linia4=czyt wys weja przep weak;
 Linia5=wys weja ode weak;
 Linia6=wys weja ode weak;
 [not]
-Linie=3
+Linie=6
 Linia1=ROZKAZ not;
 Linia2=czyt wys wei il;
-Linia3=
+Linia3=wyad wea;
+Linia4=czyt wys weja neg weak;
+Linia5=wyak wes;
+Linia6=pisz wyl wea;
 [leaq]
 Linie=3
 Linia1=ROZKAZ leaq;
@@ -170,6 +156,10 @@ Linia6=czyt wys as wea;
 Linia7=czyt wys weja mno weak;
 Linia8=wyak wes wyad wea;
 Linia9=pisz wyl wea;
+[idiv]
+Linie=2
+Linia1=ROZKAZ idiv;
+Linia2=czyt wys wei il;
 [xor]
 Linie=2
 Linia1=ROZKAZ xor;
@@ -210,9 +200,9 @@ Linia2=czyt wys wei il;
 Linie=2
 Linia1=ROZKAZ sete;
 Linia2=czyt wys wei il;
-[setz]
+[setne]
 Linie=2
-Linia1=ROZKAZ setz;
+Linia1=ROZKAZ setne;
 Linia2=czyt wys wei il;
 [sets]
 Linie=2
@@ -226,65 +216,33 @@ Linia2=czyt wys wei il;
 Linie=2
 Linia1=ROZKAZ setg;
 Linia2=czyt wys wei il;
-[setnle]
-Linie=2
-Linia1=ROZKAZ setnle;
-Linia2=czyt wys wei il;
 [setge]
 Linie=2
 Linia1=ROZKAZ setge;
-Linia2=czyt wys wei il;
-[setnl]
-Linie=2
-Linia1=ROZKAZ setnl;
 Linia2=czyt wys wei il;
 [setl]
 Linie=2
 Linia1=ROZKAZ setl;
 Linia2=czyt wys wei il;
-[setnge]
-Linie=2
-Linia1=ROZKAZ setnge;
-Linia2=czyt wys wei il;
 [setle]
 Linie=2
 Linia1=ROZKAZ setle;
-Linia2=czyt wys wei il;
-[setng]
-Linie=2
-Linia1=ROZKAZ setng;
 Linia2=czyt wys wei il;
 [seta]
 Linie=2
 Linia1=ROZKAZ seta;
 Linia2=czyt wys wei il;
-[setnbe]
-Linie=2
-Linia1=ROZKAZ setnbe;
-Linia2=czyt wys wei il;
 [setae]
 Linie=2
 Linia1=ROZKAZ setae;
-Linia2=czyt wys wei il;
-[setnb]
-Linie=2
-Linia1=ROZKAZ setnb;
 Linia2=czyt wys wei il;
 [setb]
 Linie=2
 Linia1=ROZKAZ setb;
 Linia2=czyt wys wei il;
-[setnae]
-Linie=2
-Linia1=ROZKAZ setnae;
-Linia2=czyt wys wei il;
 [setbe]
 Linie=2
 Linia1=ROZKAZ setbe;
-Linia2=czyt wys wei il;
-[setna]
-Linie=2
-Linia1=ROZKAZ setna;
 Linia2=czyt wys wei il;
 [jmp]
 Linie=4
@@ -293,12 +251,8 @@ Linia2=Argumenty 1;
 Linia3=czyt wys wei il;
 Linia4=wyad wea wel;
 [je]
-Linie=2
-Linia1=ROZKAZ je;
-Linia2=czyt wys wei il;
-[jz]
 Linie=5
-Linia1=ROZKAZ jz;
+Linia1=ROZKAZ je;
 Linia2=czyt wys wei il;
 Linia3=JEZELI zak TO @zero GDY NIE @niezero;
 Linia4=@zero wyad wea wel KONIEC;
@@ -306,10 +260,6 @@ Linia5=@niezero wyl wea;
 [jne]
 Linie=2
 Linia1=ROZKAZ jne;
-Linia2=czyt wys wei il;
-[jnz]
-Linie=2
-Linia1=ROZKAZ jz;
 Linia2=czyt wys wei il;
 [js]
 Linie=5
@@ -326,66 +276,35 @@ Linia2=czyt wys wei il;
 Linie=2
 Linia1=ROZKAZ jg;
 Linia2=czyt wys wei il;
-[jnle]
-Linie=2
-Linia1=ROZKAZ jnle;
-Linia2=czyt wys wei il;
 [jge]
 Linie=2
 Linia1=ROZKAZ jge;
-Linia2=czyt wys wei il;
-[jnl]
-Linie=2
-Linia1=ROZKAZ jnl;
 Linia2=czyt wys wei il;
 [jl]
 Linie=2
 Linia1=ROZKAZ jl;
 Linia2=czyt wys wei il;
-[jnge]
-Linie=2
-Linia1=ROZKAZ jnge;
-Linia2=czyt wys wei il;
 [jle]
 Linie=2
 Linia1=ROZKAZ jle;
-Linia2=czyt wys wei il;
-[jng]
-Linie=2
-Linia1=ROZKAZ jng;
 Linia2=czyt wys wei il;
 [ja]
 Linie=2
 Linia1=ROZKAZ ja;
 Linia2=czyt wys wei il;
-[jnbe]
-Linie=2
-Linia1=ROZKAZ jnbe;
-Linia2=czyt wys wei il;
 [jae]
 Linie=2
 Linia1=ROZKAZ jae;
 Linia2=czyt wys wei il;
-[jnb]
-Linie=2
-Linia1=ROZKAZ jnb;
-Linia2=czyt wys wei il;
 [jb]
 Linie=2
 Linia1=ROZKAZ jb;
-Linia2=czyt wys wei il;
-[jnae]
-Linie=2
-Linia1=ROZKAZ jnae;
 Linia2=czyt wys wei il;
 [jbe]
 Linie=2
 Linia1=ROZKAZ jbe;
 Linia2=czyt wys wei il;
 [jna]
-Linie=2
-Linia1=ROZKAZ jna;
-Linia2=czyt wys wei il;
 [ldr]
 Linie=4
 Linia1=ROZKAZ ldr;

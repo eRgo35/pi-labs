@@ -44,6 +44,12 @@ public class Producer1 {
   private static int manufactured_car = 0;
   private static int car_sold = 0;
   private static int car_transported = 0;
+  private static int storage = 5;
+  
+  private static final Semaphore M = new Semaphore(1); // mux
+  private static final Semaphore S = new Semaphore(0); // state
+  private static final Semaphore X = new Semaphore(storage); // storage left
+  private static final Semaphore T = new Semaphore(0); // transport queue
 
   public static void main(String[] args) {
     new Produce().start();
@@ -59,12 +65,13 @@ public class Producer1 {
       try {
         for (int i = 0; i < COUNT; i++) {
           Thread.sleep(SLEEP2);
-          // use semaphore
-
           manufactured_car++;
-          System.out.print(" Produce" + manufactured_car);
-          // use semaphore
-
+          System.out.print("\n Produce" + manufactured_car);
+          X.acquire();
+          M.acquire();
+          T.release();
+          M.release();
+          S.release();
         }
       } catch (InterruptedException ex) {
         System.out.println("Thread PrintA: Ooops..." + ex);
@@ -81,13 +88,9 @@ public class Producer1 {
       try {
         for (int i = 0; i < COUNT; i++) {
           Thread.sleep(SLEEP2);
-          // use semaphore
-
+          T.acquire();
           car_transported++;
-          // System.out.print(" Transport" +car_transported);
           System.out.print(" \n Transport" + car_transported);
-          // use semaphore
-
         }
       } catch (InterruptedException ex) {
         System.out.println("Thread PrintB: Ooops..." + ex);
@@ -104,12 +107,12 @@ public class Producer1 {
       try {
         for (int i = 0; i < COUNT; i++) {
           Thread.sleep(SLEEP2);
-          // use semaphore
-
+          S.acquire();
+          M.acquire();
+          T.release();
+          M.release();
           car_sold++;
           System.out.print("\n Sale " + car_sold);
-          // use semaphore
-
         }
       } catch (InterruptedException ex) {
         System.out.println("Thread PrintC: Ooops..." + ex);

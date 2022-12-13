@@ -1,65 +1,33 @@
-// wOS version 1.0.0 / build 2022-12-07
-// Copyright (c) Michael Czyz All Rights Reserved.
-// wOS - system operacyjny dla maszyny W
+_pre_config:
+mov ax nul
+mov bx nul
+mov cx nul
+mov dx nul
+mov di nul
+mov sp nul
+mov bp nul
+ldr nul
+ldx nul
+ldy nul
 
-// HEADER
+_start:
+mov ax x
+not ax
+ldr ax
+printf 2
+end
 
-CALL PRINT
-
-// POST
-LDR N0
-
-STR AX
-STR BX
-STR CX
-STR DX
-
-ADD N1
-SUB N1
-IMUL N1
-
-END:
-  JMP END
-
-END
-
-PRINT:
+_data:
+x:
+   rst 10
 
 
-// STORAGE REGISTERS
-
-AX: RPA
-BX: RPA
-CX: RPA
-DX: RPA
-
-// BASIC INTEGERS
-
-N0: RST 0
-N1: RST 1
-N2: RST 2
-N3: RST 3
-N5: RST 5
-N7: RST 7
-
-// CHARMAP
-
-LF: RST 10
-SP: RST 32
-
-  RST 'w'
-  RST 'O'
-  RST 'S'
-  RST ' '
-  RST '1'
-  RST '.'
-  RST '0'
-  RST '.'
-  RST '0'
-  RST 10
-  RST 'H'
-  RST 'e'
-  RST 'l'
-  RST 'l'
-  RST 'o'
-  RST '!'
+_post_config:
+nul: rst 0
+ax: rpa
+bx: rpa
+cx: rpa
+dx: rpa
+di: rpa
+sp: rpa
+bp: rpa

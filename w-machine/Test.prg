@@ -8,17 +8,29 @@ ldx nul
 ldy nul 
 
 _start:
-mov ax, x
-neg ax
-mov bx ax
-neg ax
-mov cx ax
+loop:
+   ldr arr
+   printf 2
+   add arr one
+   jmp loop
 end
 
 _data:
-x: rst 5
-y: rst 8
+arr: 
+   rst 'H'
+   rst 'e'
+   rst 'l'
+   rst 'l'
+   rst 'o'
+   rst ' '
+   rst 'W'
+   rst 'o'
+   rst 'r'
+   rst 'l'
+   rst 'd'  
+i: rst 11
 res: rpa
+one: rst 1
 
 _post_config:
 nul: rst 0

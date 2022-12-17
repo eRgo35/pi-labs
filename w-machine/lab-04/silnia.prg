@@ -1,4 +1,6 @@
 pob n
+soz o_end
+som end
 lad res
 ode one
 lad n
@@ -17,6 +19,10 @@ loop:
    soz end
    lad n
    sob loop
+
+o_end:
+   pob one
+   sob end
 
 end:
    pob res
@@ -53,7 +59,7 @@ bx: rpa
 cx: rst 0
 dx: rpa
 
-n: rst 4
+n: rst 3
 res: rst 0
 one: rst 1
 nul: rst 0

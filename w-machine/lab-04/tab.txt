@@ -1,0 +1,11 @@
+tab[i] - max
+5 - 2 = 3 ok
+2 - 5 = -3 ok
+0 - 2 = -2 ok
+5 - 0 = 5 ok
+(-3) - 4 = -7 ok
+(-5) - (-10) = 5 ok
+10 - (-12) = 24 ok
+
+SOM -> skip
+ELSE -> max = tab[i]

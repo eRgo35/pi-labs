@@ -26,8 +26,8 @@ ret:
    lad res   
    stp
 
-a: rst 1
-b: rst 0
+a: rst 25
+b: rst 6
 nul: rst 0
 one: rst 1
 res: rpa

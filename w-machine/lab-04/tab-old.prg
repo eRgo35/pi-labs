@@ -1,47 +1,40 @@
 pob length
-soz end2
-lad counter
-pob ins
-lad backup
+lad inc
 pob tab
-lad max
+lad backup
 loop:
-   pob counter
+   pob inc
    ode one
    som end
-   lad counter
-ins: 
-   pob tab
+   lad inc
+ins:
+   pob tab 
    ode max
-   som skip
+   som bck
    dod max
    lad max
-fin:
+bck:
    pob ins
    dod one
    lad ins
    sob loop
 
-skip:
-   sob fin
-
 end:
    pob backup
-   lad ins
+   lad tab
    pob max
-end2:
    stp
 
 one: rst 1
 length: rst 8
-max: rpa
-backup: rpa
-counter: rpa
 tab: rst -56
      rst -56
      rst -5
-     rst 1
+     rst -1
      rst -10
      rst -1
-     rst 10
+     rst -53
      rst -54
+inc: rpa
+max: rpa
+backup: rpa  

@@ -77,14 +77,15 @@ Linia2=argumenty 0;
 Linia3=czyt wys wei il;
 Linia4=stop;
 [mov]
-Linie=7
+Linie=8
 Linia1=ROZKAZ mov;
 Linia2=argumenty 2;
 Linia3=czyt wys wei il;
-Linia4=wyl wea;
-Linia5=czyt wys as wea;
-Linia6=czyt wyad wea il;
-Linia7=pisz wyl wea;
+Linia4=wyad wea;
+Linia5=czyt wys weja przep weak; 
+Linia6=wyak wes wyl wea;
+Linia7=czyt wys sa wea il;
+Linia8=pisz wyl wea;
 [inc]
 Linie=6
 Linia1=ROZKAZ inc;

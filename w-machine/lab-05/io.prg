@@ -1,5 +1,9 @@
     pob counter
     lad w_counter
+    pob ac_counter
+    lad w_ac_counter
+    pob st_zero
+    lad size
 input_loop:
     wpr 1
     ode asterisk
@@ -45,11 +49,15 @@ get_tab_len:
     pob size
     lad w_size
     sdp write
+    pob line_feed
+    wyp 2
+    pob cap_A
+    lad cap
 // calc occurs A & C 
 tab_loop:
     pob w_size
     ode one
-    som end
+    som end_loop
     lad w_size
     pob pob0
     dod adres
@@ -57,41 +65,52 @@ tab_loop:
     lad pob0
     sob pob0
 tab_loop_continue:
-    ode cap_A
-    soz tab_loop_print_A
-    dod cap_A
-    ode cap_C
-    soz tab_loop_print_C
+    ode cap
+    soz tab_loop_print
 tab_loop_end:
     pob pob0c
     lad pob0
     sob tab_loop
-tab_loop_print_A:
-    dod cap_A
-    wyp 2
-    sob tab_loop_end
-tab_loop_print_C:
-    dod cap_C
+tab_loop_print:
+    dod cap
     wyp 2
     sob tab_loop_end    
 pob0:
     pob 0
     sob tab_loop_continue
+end_loop:
+    // at this point A is complete, now time for C
+    pob w_ac_counter
+    ode one
+    soz end
+    lad w_ac_counter
+    pob size
+    lad w_size
+    pob cap_C
+    lad cap
+    pob line_feed
+    wyp 2
+    sob tab_loop
 end:
-   stp
+    stp
 
 counter: rst 4
 w_counter: rpa
 w_size: rpa
 asterisk: rst 42
 one: rst 1
+st_zero: rst 0
 tab_tmp: rpa
 lad0c: lad 0
 pob0c: pob 0
+cap: rpa
 cap_A: rst 65
 cap_C: rst 67
 // G musi byc wieksze o 1 bo jest som
 cap_G: rst 72
+w_ac_counter: rpa
+ac_counter: rst 2
+line_feed: rst 10
 
 // podprogram "Write"
 write: 

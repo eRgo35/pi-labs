@@ -1,5 +1,5 @@
 [Opcje]
-Po³¹czenie=1
+Poï¿½ï¿½czenie=1
 Inkrementacja=1
 Logiczne=0
 Arytmetyczne=1
@@ -7,10 +7,10 @@ Stos=1
 RejestrX=0
 RejestrY=0
 Przerwania=1
-Wejœcie=1
+Wejï¿½cie=1
 Znaczniki=1
-Adres=6
-Kod=4
+Adres=10
+Kod=6
 [Rozkazy]
 Liczba=16
 Nazwa1=stp
@@ -31,7 +31,7 @@ Nazwa15=msk
 Nazwa16=czm
 [stp]
 Linie=5
-Linia1=// zakoñczenie programu
+Linia1=// zakoï¿½czenie programu
 Linia2=ROZKAZ STP;
 Linia3=Argumenty 0;
 Linia4=czyt wys wei il;
@@ -121,7 +121,7 @@ Linia9=wyls wes wyws wea;
 Linia10=pisz wyap wel wea rint;
 [wyp]
 Linie=10
-Linia1=// wypisanie znaku znajduj¹cego siê w akumulatorze na UZ o numerze podanym jako argument rozkazu
+Linia1=// wypisanie znaku znajdujï¿½cego siï¿½ w akumulatorze na UZ o numerze podanym jako argument rozkazu
 Linia2=ROZKAZ WYP;
 Linia3=czyt wys wei il;
 Linia4=wyak weja ode weak wes werb start eni;
@@ -162,7 +162,7 @@ Linia4=wyad werm;
 Linia5=wyl wea;
 [msk]
 Linie=6
-Linia1=// Rozkaz maskowania adresowanie bezpoœrednie
+Linia1=// Rozkaz maskowania adresowanie bezpoï¿½rednie
 Linia2=ROZKAZ MSK;
 Linia3=czyt wys wei il;
 Linia4=wyad wea;

@@ -1,0 +1,29 @@
+afGgrAz*Zd*d3e*IACC*
+
+// 5
+// AA
+// CC
+
+@@@DDDCABBB****
+
+// 8
+// A
+// C
+
+****
+
+// 0
+// 
+//
+
+@ABCDEFGH****
+
+// 7
+// A
+// C
+
+aaabbbccdddeee@@@@HHHHhh****
+
+// 0
+// 
+// 

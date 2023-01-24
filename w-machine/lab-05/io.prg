@@ -12,11 +12,11 @@ input_loop:
 input_continue:
     // wyp 2 ----debug
     ode cap_A
-    som input_end
+    som input_loop
     dod cap_A
     ode cap_G
     som add_tab
-    dod cap_G
+    // dod cap_G
 input_end:
     sob input_loop
 exit_char:

@@ -1,9 +1,16 @@
-sob program
+sob setup
 sob int1
 sob int2
 sob int3
 sob int4
 
+setup:
+   pob stp_int_1_2
+   lad w_stp_int_1
+   lad w_stp_int_2
+   pob stp_int_3_4
+   lad w_stp_int_3
+   lad w_stp_int_4
 program:
 loop:
    pob fill
@@ -28,10 +35,10 @@ loop1:
    pob loop_int_1
    sob loop1
 end1:
-   pob stp_int_1
+   pob w_stp_int_1
    ode one
    soz terminate
-   lad stp_int_1   
+   lad w_stp_int_1   
    pzs
    msk mask_1
    pwr
@@ -52,10 +59,10 @@ loop2:
    pob loop_int_2
    sob loop2
 end2:
-   pob stp_int_2
+   pob w_stp_int_2
    ode one
    soz terminate
-   lad stp_int_2   
+   lad w_stp_int_2   
    pzs
    msk mask_2
    pwr
@@ -77,10 +84,10 @@ loop3:
    pob loop_int_3
    sob loop3
 end3:
-   pob stp_int_3
+   pob w_stp_int_3
    ode one
    soz terminate
-   lad stp_int_3    
+   lad w_stp_int_3    
    pzs
    msk mask_3
    pwr
@@ -102,10 +109,10 @@ loop4:
    pob loop_int_4
    sob loop4
 end4:
-   pob stp_int_4
+   pob w_stp_int_4
    ode one
    soz terminate
-   lad stp_int_4   
+   lad w_stp_int_4   
    pzs
    msk mask_4
    pwr
@@ -129,7 +136,9 @@ loop_int_1: rpa
 loop_int_2: rpa
 loop_int_3: rpa
 loop_int_4: rpa
-stp_int_1: rst 3
-stp_int_2: rst 3
-stp_int_3: rst 6
-stp_int_4: rst 6
+stp_int_1_2: rst 3
+stp_int_3_4: rst 6
+w_stp_int_1: rpa
+w_stp_int_2: rpa
+w_stp_int_3: rpa
+w_stp_int_4: rpa

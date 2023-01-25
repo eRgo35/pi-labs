@@ -36,6 +36,7 @@ int1:
    wyp 2
    pzs
    msk mask
+   pzs
    stp
    
 int2:
